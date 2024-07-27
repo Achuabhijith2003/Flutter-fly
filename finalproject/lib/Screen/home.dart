@@ -12,6 +12,7 @@ class _HomeState extends State<Home> {
   List<Widget> body = [
     SingleChildScrollView(
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           // Banner for promotions
           Image.asset('assets/Shoes Web Banner ׀.jpeg'),
@@ -39,13 +40,125 @@ class _HomeState extends State<Home> {
           ),
 
           // Grid of featured shoe items
-          GridView.count(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            crossAxisCount: 2,
-            children: List.generate(
-              2, // Replace with actual number of featured shoes
-              (index) => ShoeListItem(),
+          Material(
+            child: GridView.extent(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              maxCrossAxisExtent: 200.0, // Adjust based on desired width
+              children: [
+                InkWell(
+                  onTap: () {
+                    // Navigate to product detail screen
+                  },
+                  child: Card(
+                    shadowColor: Colors.green,
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          'assets/Malta High Top Sneakers Shoes Retro.jpeg',
+                          height: 140,
+                          width: 300,
+                        ),
+                        const Text('Shoe Name'),
+                        const Text('\$ 150'),
+                      ],
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    // Navigate to product detail screen
+                  },
+                  child: Card(
+                    shadowColor: Colors.green,
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          'assets/Malta High Top Sneakers Shoes Retro.jpeg',
+                          height: 140,
+                          width: 300,
+                        ),
+                        const Text('Shoe Name'),
+                        const Text('\$ 150'),
+                      ],
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    // Navigate to product detail screen
+                  },
+                  child: Card(
+                    shadowColor: Colors.green,
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          'assets/Malta High Top Sneakers Shoes Retro.jpeg',
+                          height: 140,
+                          width: 300,
+                        ),
+                        const Text('Shoe Name'),
+                        const Text('\$ 150'),
+                      ],
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    // Navigate to product detail screen
+                  },
+                  child: Card(
+                    shadowColor: Colors.green,
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          'assets/Malta High Top Sneakers Shoes Retro.jpeg',
+                          height: 140,
+                          width: 300,
+                        ),
+                        const Text('Shoe Name'),
+                        const Text('\$ 150'),
+                      ],
+                    ),
+                  ),
+                ),  InkWell(
+        onTap: () {
+          // Navigate to product detail screen
+        },
+        child: Card(
+          shadowColor: Colors.green,
+          child: Column(
+            children: [
+              Image.asset(
+                'assets/Malta High Top Sneakers Shoes Retro.jpeg',
+                height: 140,
+                width: 300,
+              ),
+              const Text('Shoe Name'),
+              const Text('\$ 150'),
+            ],
+          ),
+        ),
+      ),  InkWell(
+        onTap: () {
+          // Navigate to product detail screen
+        },
+        child: Card(
+          shadowColor: Colors.green,
+          child: Column(
+            children: [
+              Image.asset(
+                'assets/Malta High Top Sneakers Shoes Retro.jpeg',
+                height: 140,
+                width: 300,
+              ),
+              const Text('Shoe Name'),
+              const Text('\$ 150'),
+            ],
+          ),
+        ),
+      ),
+              ],
             ),
           ),
         ],
@@ -94,13 +207,16 @@ class ShoeListItem extends StatelessWidget {
         // Navigate to product detail screen
       },
       child: Card(
-        elevation: 15,
         shadowColor: Colors.green,
         child: Column(
           children: [
-            Image.asset('assets/Malta High Top Sneakers Shoes Retro.jpeg'),
-            // Text('Shoe Name'),
-            // Text('\$ Price'),
+            Image.asset(
+              'assets/Malta High Top Sneakers Shoes Retro.jpeg',
+              height: 140,
+              width: 300,
+            ),
+            const Text('Shoe Name'),
+            const Text('\$ 150'),
           ],
         ),
       ),
