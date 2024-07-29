@@ -1,8 +1,5 @@
 plugins {
     id "com.android.application"
-    // START: FlutterFire Configuration
-    id 'com.google.gms.google-services'
-    // END: FlutterFire Configuration
     id "kotlin-android"
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id "dev.flutter.flutter-gradle-plugin"
@@ -45,7 +42,6 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutterVersionCode.toInteger()
         versionName = flutterVersionName
-        minSdkVersion 23  
     }
 
     buildTypes {
@@ -60,3 +56,9 @@ android {
 flutter {
     source = "../.."
 }
+
+
+// dependencies {
+//   // ... other dependencies
+//   implementation 'io.flutter:plugins.path_provider:2.0.9'  // Use the same version as in pubspec.yaml
+// }

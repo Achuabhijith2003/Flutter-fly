@@ -1,16 +1,9 @@
-import 'package:finalproject/Screen/home.dart';
-import 'package:finalproject/auth/loginpage.dart';
-import 'package:finalproject/firebase_options.dart';
+import 'package:finalproject/Model/Cart_model.dart';
+import 'package:finalproject/intropage.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
 
-
-Future<void> main(List<String> args) async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-
+void main(List<String> args) {
   runApp(const Myapp());
 }
 
@@ -19,8 +12,11 @@ class Myapp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Home(),
+    return ChangeNotifierProvider(
+      create: (context) => CartModel(),
+      child: const MaterialApp(
+      home: Intropage(),
+    ),
     );
   }
 }
