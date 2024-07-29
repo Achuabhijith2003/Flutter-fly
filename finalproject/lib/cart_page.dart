@@ -1,5 +1,6 @@
 import 'package:finalproject/Model/Cart_model.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class CartPage extends StatelessWidget {
@@ -9,16 +10,26 @@ class CartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Center(
-            child: Text(
-              "My Cart",
-            ),
-          ),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
         ),
         body: Consumer<CartModel>(
           builder: (context, value, child) {
             return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 15),
+                  child: Text(
+                    "My Cart",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.notoSerif().copyWith(
+                      fontSize: 32, // Adjust font size as needed
+                      fontWeight:
+                          FontWeight.bold, // Adjust font weight as needed
+                    ),
+                  ),
+                ),
                 Expanded(
                     child: ListView.builder(
                   padding: const EdgeInsets.all(12),
@@ -55,7 +66,7 @@ class CartPage extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: Colors.green,
                         borderRadius: BorderRadius.circular(15)),
-                    padding: EdgeInsets.all(25),
+                    padding: const EdgeInsets.all(25),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -71,7 +82,7 @@ class CartPage extends StatelessWidget {
                             ),
                             Text(
                               value.calculateTotal(),
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
@@ -80,7 +91,11 @@ class CartPage extends StatelessWidget {
                         ),
                         // pay button
                         Container(
-                          child: Row(
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.green.shade100),
+                              borderRadius: BorderRadius.circular(12)),
+                          padding: const EdgeInsets.all(12),
+                          child: const Row(
                             children: [
                               Text("Pay Now"),
                               Icon(Icons.arrow_forward_ios)

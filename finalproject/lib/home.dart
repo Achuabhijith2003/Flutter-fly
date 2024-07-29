@@ -60,7 +60,7 @@ class homepage extends StatelessWidget {
                 builder: (context, value, child) {
                   return GridView.builder(
                     itemCount: value.shopeitem.length,
-                    padding: EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(12),
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2, childAspectRatio: 1 / 1.3),
@@ -88,10 +88,10 @@ class homepage extends StatelessWidget {
           Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => CartPage(),
+                builder: (context) => const CartPage(),
               ));
         },
-        child: Icon(
+        child: const Icon(
           Icons.shopping_bag,
           color: Colors.green,
         ),
